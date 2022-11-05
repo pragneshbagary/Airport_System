@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
-import airport from './images/airport.jpg'
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import airport from './images/airport.jpg';
+import LandingPage from './components/LandingPage';
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
-        <img className = "main_img" src={airport}/>
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <Router>
+        <Switch>
+          <Route exact path ='/'>
+            <LandingPage/>
+          </Route>
+
+          {/* <Route exact path = '/signup'>
+            <SignupPage />
+          </Route>
+
+          <Route exact path = '/login'>
+            <LoginPage />
+          </Route>
+
+          <Route exact path = '/search'>
+            <SearchPage />
+          </Route> */}
+
+        </Switch>
+      </Router>
+       
+        
     </div>
   );
 }
